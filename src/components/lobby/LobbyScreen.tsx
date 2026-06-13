@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import DraftScreen from "@/components/draft/DraftScreen";
 import LineupScreen from "@/components/lineup/LineupScreen";
 import { supabase } from "@/lib/supabase";
+import { FriendGroup } from "@/types/game";
 
 type Room = {
   id: string;
@@ -12,6 +13,8 @@ type Room = {
   status: string;
   mode: number;
   current_turn: number;
+  current_group: FriendGroup | null;
+  current_pick: number;
   host_name: string | null;
 };
 
